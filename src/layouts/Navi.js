@@ -3,12 +3,14 @@ import CartSummary from "./CartSummary";
 import { Container,Menu } from "semantic-ui-react";
 import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
+import { useHistory } from "react-router";
 
 const Navi = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true)
-
+  const history = useHistory()
   const handleSingOut = ()=>{
     setIsAuthenticated(false)
+    history.push("/")
   }
   const handleSingIn = ()=>{
     setIsAuthenticated(true)

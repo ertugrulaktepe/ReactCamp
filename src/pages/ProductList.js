@@ -8,7 +8,7 @@ const ProductList = () => {
   useEffect(()=>{
     let productService = new ProductService()
     productService.getProducts().then(result=>setProducts(result.data))
-  })
+  },[])
 
   return (
     <div>
